@@ -38,7 +38,8 @@ from employees e
 join employee_department ed ON e.id = ed.employee_id
 join departments d ON ed.department_id = d.id
 left join department_directors dd ON d.id = dd.department_id
-left join employees m ON dd.employee_id = m.id;```
+left join employees m ON dd.employee_id = m.id;
+```
 
 ### b. Вывести все отделы и количество сотрудников в отделе без руководителя 
 ```sql
@@ -50,6 +51,7 @@ left join employee_department ed on d.id = ed.department_id
 left join department_directors dd on d.id = dd.department_id
 where dd.employee_id is null
 group by d.id
+
 ```
 ### c. Вывести список ID отделов, количество сотрудников в которых не превышает 3 человек
 ```sql
